@@ -46,6 +46,7 @@ namespace ArduinoController
                 porta.WriteLine(x);
 
             }
+            sp.Close();
         }
 
         static void ler()
@@ -56,7 +57,7 @@ namespace ArduinoController
                 if (x != "\r")
                 {
                     var data = x.ToString();
-                    dataStore.ReceivedData(data);
+                    dataStore.ReceivedDataV2(data);
                     Console.WriteLine("Received:" + data);
                     Console.Write("Send:");
                 }
